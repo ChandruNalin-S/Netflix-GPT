@@ -1,6 +1,8 @@
 # Netflix GPT
   - Install create-react-app into our application.
   - Install tailwindCSS and config into our application.
+  - created header
+  - created Sign In
 
 
 
@@ -20,3 +22,6 @@
 - NetflixGPT
   - Search Bar
   - Movie Suggestions.
+
+
+# important: when we have lot of field in our form, then we can use some library called "formik", it is a external library to create big form and add lot of field, manage the form easily.
