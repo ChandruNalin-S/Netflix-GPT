@@ -15,6 +15,17 @@
   - update profile picture when user is sign-in.
   - instead of using netlfix api, we are going to use tmdb api, it is movie database. to give all the latest movie data.
 
+  - bigfix: we fix the bug in sign-in/up and browse, how? through the user object only they can navigate from sign-in/up to browse and when the user object present in store then he cannot redirect to login page without signout the user. 
+  - unsubscribed to the onAuthStateChanged callback.
+  - Add hardcoded values or data into one file (constants.js).
+  - Register in TMDB for getting access token and API.
+  - Get data from tmdb using api call of getnowplayingmovielist.
+  - planning for building browse page, divided into two part 1-> main container(contains of video title and video background) and 2-> secondary container.
+  - create slices of movie and trailer in appstore.
+  - created custom hook for getting api of nowPlaying movie and trailer.
+  - store the data of nowPlaying movie and trailer in appstore (movieSlice)
+  - create videobackground with autoPlay and video title.
+  - Embedded video from youtube to display in video background.
 
 
 

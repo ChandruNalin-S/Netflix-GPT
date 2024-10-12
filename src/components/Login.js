@@ -3,9 +3,9 @@ import Header from './Header'
 import { checkValidateData } from '../utils/Validate';
 import { auth } from '../utils/firebase';
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";// this is called API from firebase provided for authentication.
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { USER_AVATAR } from '../utils/constants';
 
 
 const Login = () => {
@@ -19,7 +19,6 @@ const Login = () => {
   const email = useRef(null);// useRef is used of reference inside the field tag like in <p> tag or input tag.
   const password = useRef(null);
 
-  const navigate = useNavigate();
 
   const userName = useRef(null);
 
@@ -42,11 +41,10 @@ const Login = () => {
         // Signed up 
         const user = userCredential.user;
         updateProfile(user, {
-          displayName: userName.current.value , photoURL: "https://avatars.githubusercontent.com/u/160375185?v=4"
+          displayName: userName.current.value , photoURL: USER_AVATAR
         }).then(() => {
           const {uid,email,displayName,photoURL} = auth.currentUser;
           dispatch(addUser({uid:uid, email:email, displayName:displayName,photoURL:photoURL}));
-          navigate('/browse')
         }).catch((error) => {
           setErrorMessage(error.message);
         });
@@ -65,7 +63,6 @@ const Login = () => {
         // Signed in 
         const user = userCredential.user;
         console.log(user);
-        navigate("/browse");
       })
       .catch((error) => {
         const errorCode = error.code;
