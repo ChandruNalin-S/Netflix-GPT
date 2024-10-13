@@ -26,6 +26,8 @@
   - store the data of nowPlaying movie and trailer in appstore (movieSlice)
   - create videobackground with autoPlay and video title.
   - Embedded video from youtube to display in video background.
+  - created custom hook to get movie data and add tailwind css in browse page.
+  - displaying the movies list.
 
 
 

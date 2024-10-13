@@ -2,6 +2,8 @@ export const LOG_URL ="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-8
 
 export const USER_AVATAR ="https://occ-0-3663-64.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABVC11njRAccYpkkyuBsUHtOOKYFGkwSR5W17rS9AcsA928D5_xgxoWHbUZESUThei8tFV3So6eTfjsvn0RRqN3kuxbq7KCI.png?r=59d";
 
+export const IMG_CDN_URL = "https://image.tmdb.org/t/p/original";
+
 
 
 export const API_OPTIONS = {
