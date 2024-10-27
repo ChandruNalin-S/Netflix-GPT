@@ -5,9 +5,14 @@ import SecondaryContainer from './SecondaryContainer';
 import usePopularMovie from '../hooks/usePopularMovie';
 import useTopRatedMovie from '../hooks/useTopRatedMovie';
 import useUpComingMovie from '../hooks/useUpComingMovie';
+import { useSelector } from 'react-redux';
+import GptSearchPage from './GptSearchPage';
 
 
 const Browse = () => {
+
+  const showGptSearch = useSelector((store)=>store?.gpt?.showGptSearch);
+
 
   useNowPlayingMovies();// custom hook for fetch the api data and storing in redux-store (movieSlice);
 
@@ -18,10 +23,15 @@ const Browse = () => {
   useUpComingMovie();// custom hook for fetch the api data and storing in redux-store (movieSlice);
   
   return (
-    <div className='bg-stone-950'>
+    <div className=''>
       <Header/>
-      <MainContainer/>
-      <SecondaryContainer/>
+      {
+        showGptSearch ? (<GptSearchPage/>) :
+        (<>{/* <></> this is called react fragment to combine two or more component inside one */}
+          <MainContainer/>
+          <SecondaryContainer/>
+        </>)
+      }
     </div>
   )
 }

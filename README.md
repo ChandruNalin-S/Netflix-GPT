@@ -28,6 +28,8 @@
   - Embedded video from youtube to display in video background.
   - created custom hook to get movie data and add tailwind css in browse page.
   - displaying the movies list.
+  - created GPT_PAGE inside we created GPT-Search bar and add tailwind css 
+  - add additional feature in gpt-search-page called language translation
 
 
 

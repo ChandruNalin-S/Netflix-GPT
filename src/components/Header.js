@@ -4,7 +4,9 @@ import { auth } from '../utils/firebase';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
-import { LOG_URL } from '../utils/constants';
+import { LOG_URL, SUPPORTED_LANGUAGE } from '../utils/constants';
+import { toggleGptSearchView } from '../utils/gptSlice';
+import { changeLanguage } from '../utils/configSlice';
 
 const Header = () => {
 
@@ -12,9 +14,10 @@ const Header = () => {
 
   const dispatch = useDispatch();
 
-
-
   const user = useSelector((store)=> store.user);
+
+  const langTranslateShow = useSelector((store)=> store.gpt.showGptSearch);
+
 
   const handleSignOut = ()=>{
     signOut(auth).then(() => {
@@ -22,6 +25,16 @@ const Header = () => {
       navigate('/error');
     });
   }
+
+
+  const handleGptSearchClick= ()=>{
+    dispatch(toggleGptSearchView());
+  }
+
+  const handleChangeLanguage = (e)=>{
+    dispatch(changeLanguage(e.target.value));
+  }
+
 
   useEffect(()=>{
     const unSubscribe = onAuthStateChanged(auth, (user) => {
@@ -47,6 +60,12 @@ const Header = () => {
 
       {user && 
       (<div className='flex mr-2 space-x-4'>
+        {langTranslateShow && <select className='p-2 m-2 bg-gray-600 text-white' onChange={handleChangeLanguage}>
+          {SUPPORTED_LANGUAGE.map((lang)=>{
+            return <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>
+          })}
+        </select>}
+        <button className='py-2 px-4 m-2  bg-purple-800 rounded-md text-white' onClick={handleGptSearchClick}>{langTranslateShow ? "Browse Movies" : "GPT-SEARCH"}</button>
         <img className='w-10 h-10' src={user?.photoURL} alt='userIcon'/>
         <button className='font-bold text-red-700 text-lg' onClick={handleSignOut}>Sign Out</button>
       </div>)}

@@ -4,6 +4,8 @@ export const USER_AVATAR ="https://occ-0-3663-64.1.nflxso.net/dnm/api/v6/vN7bi_M
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/original";
 
+export const BG_URL = 'https://assets.nflxext.com/ffe/siteui/vlv3/4d2c5849-b306-4884-9036-6211f7ee0178/web/IN-en-20240930-TRIFECTA-perspective_1e1ca6cd-9e2d-4e9d-9e4b-ba0c2d3a0e31_large.jpg';
+
 
 
 export const API_OPTIONS = {
@@ -13,3 +15,20 @@ export const API_OPTIONS = {
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjOWMyYmQyYjU4MTA5NTIzMzg0ZDE1NWU0YzM5MWZiMyIsInN1YiI6IjY1ZDYwZjY3ZjI5ZDY2MDE3ZGU5OGE4OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.w6gLhSrCxtVGdpc503qDNAGSY3xUr3vKFgM30KRhEbU'
   }
 };
+
+
+
+export const SUPPORTED_LANGUAGE = [
+  {
+    identifier:"en",
+    name:"English"
+  },
+  {
+    identifier:"tamil",
+    name:"Tamil"
+  },
+  {
+    identifier:"spanish",
+    name:"Spanish"
+  }
+];
