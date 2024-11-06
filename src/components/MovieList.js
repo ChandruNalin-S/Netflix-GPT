@@ -3,7 +3,7 @@ import MovieCard from './MovieCard';
 
 const MovieList = (props) => {
   const {title,movies} = props;
-  console.log(movies);
+  //console.log(movies);
   if(!movies) return;
 
   return (
