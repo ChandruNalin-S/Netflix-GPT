@@ -55,18 +55,18 @@ const Header = () => {
 
 
   return (
-    <div className='pl-4 absolute w-screen bg-gradient-to-b from-black z-30 flex justify-between items-center'>
+    <div className='pl-4 absolute w-screen bg-gradient-to-b from-black z-30 flex flex-col pt-2 md:flex-row justify-between items-center'>
       <img className='w-44' src={LOG_URL} alt='log'/>
 
       {user && 
       (<div className='flex mr-2 space-x-4'>
-        {langTranslateShow && <select className='p-2 m-2 bg-gray-600 text-white' onChange={handleChangeLanguage}>
+        {langTranslateShow && <select className='px-1 m-0 md:p-2 m-2 bg-gray-600 text-white rounded-md' onChange={handleChangeLanguage}>
           {SUPPORTED_LANGUAGE.map((lang)=>{
             return <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>
           })}
         </select>}
-        <button className='py-2 px-4 m-2  bg-purple-800 rounded-md text-white' onClick={handleGptSearchClick}>{langTranslateShow ? "Browse Movies" : "GPT-SEARCH"}</button>
-        <img className='w-10 h-10' src={user?.photoURL} alt='userIcon'/>
+        <button className='py-2 px-4 m-2  bg-purple-800 text-white rounded-md' onClick={handleGptSearchClick}>{langTranslateShow ? "Browse Movies" : "GPT-SEARCH"}</button>
+        <img className='w-10 h-10 hidden md:block' src={user?.photoURL} alt='userIcon'/>
         <button className='font-bold text-red-700 text-lg' onClick={handleSignOut}>Sign Out</button>
       </div>)}
     </div>

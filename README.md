@@ -30,7 +30,11 @@
   - displaying the movies list.
   - created GPT_PAGE inside we created GPT-Search bar and add tailwind css 
   - add additional feature in gpt-search-page called language translation
-
+  - gptSlice in store
+  - due some we cannot get gpt movie from api 
+  - memoization (to optmize the api call and data)
+  - make our site/app responsive in desktop and mobile
+  - we store api key in .env file and push into gitignore
 
 
 # Features
